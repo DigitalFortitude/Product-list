@@ -1,0 +1,77 @@
+@use "../../styles/font.scss" as *;
+@use "../../styles/variables.scss" as *;
+@use "../../styles//mixins.scss" as *;
+
+.addtocart {
+  max-width: 90%;
+  min-width: 65%;
+  position: absolute;
+  left: 16%;
+  bottom: -6%;
+
+  @include mobile {
+    left: 19%;
+    min-width: 60%;
+  }
+
+  &__button {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 30px;
+    outline: none;
+
+    @include mobile {
+      padding: 1.2rem 0rem;
+      border-radius: 40px;
+    }
+    .cartp {
+      &:hover {
+        color: $Red;
+      }
+    }
+  }
+  .white {
+    background-color: white;
+    border: 1px solid $Rose500;
+    font-family: Redhat-semibold;
+    font-size: 1rem;
+    color: $Rose900;
+    justify-content: center;
+    &:hover {
+      border: 1.6px solid $Red;
+      cursor: pointer;
+    }
+  }
+  .saffron {
+    background-color: $Red;
+    padding: 1rem;
+    font-size: 1rem;
+    border: none;
+    justify-content: space-around;
+    &--negative {
+      display: flex;
+      width: 16px;
+      height: 16px;
+      border: 2px solid white;
+      padding: 0.2rem;
+      border-radius: 50%;
+
+      .icon {
+        &:hover {
+          fill: $Red; // Change color on hover
+        }
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: white;
+      }
+    }
+    &__number {
+      color: white;
+      font-size: 1.2rem;
+    }
+  }
+}

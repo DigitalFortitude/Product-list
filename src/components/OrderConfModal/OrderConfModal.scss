@@ -1,0 +1,145 @@
+@use "../../styles/mixins.scss" as *;
+@use "../../styles/font.scss" as *;
+@use "../../styles/variables.scss" as *;
+
+.modal {
+  position: fixed;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  scroll-behavior: smooth;
+  max-height: 78vh;
+  overflow-y: auto;
+  @include mobile {
+    width:95%;
+    padding: 2rem 1.5rem;
+    top:63%;
+    transform: translate(-50%, -55%);
+    border-radius: 20px;
+  
+  }
+  &__tick {
+    img {
+      width: 30px;
+      @include mobile{
+        width:auto;
+      }
+    }
+    margin-bottom: 12px;
+  }
+  &__statement {
+    .order--confirm {
+      margin-bottom: 0;
+      color: $Rose900;
+      font-size:2em;
+      @include mobile{
+        font-size: 2.8rem;
+      }
+    }
+    .enjoy--food {
+      margin-bottom: 22px;
+      color: $Rose500;
+      font-size: 16px;
+      @include mobile{
+        font-size: 1.1em;
+      }
+    }
+    
+  }
+  &__list {
+    width: 92%;
+    padding: 1em;
+    background-color: $Rose50;
+    margin: auto;
+    border-radius: 10px;
+    margin-bottom: 1.4em;
+    max-height:300px;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    &__article {
+      &--section {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        padding:1em 0;
+        .thumbnail-image {
+          img {
+            width: 4em;
+            @include mobile{
+              width:4em;
+            }
+          }
+
+        }
+        .food-des {
+          margin-left: 10px;
+          .food {
+            font-size: 1em;
+            color: $Rose900;
+            font-family: Redhat-bold;
+            @include mobile{
+              font-family: Redhat-semibold;
+            }
+          }
+          .quantity-price--number {
+            color: $Red;
+            font-family: Redhat-semibold;
+            font-size: 1.4em;
+          }
+          .quantity-price--eachprice {
+            color: $Rose500;
+            font-family: Redhat-regular;
+            font-size:1.2rem;
+            @include mobile{
+              font-size: 1rem;      
+            }
+          }
+        }
+        .tot-price {
+          color: $Rose900;
+          font-family: redhat-bold;
+          font-size: 1.2245em;
+          @include mobile{
+            font-family: Redhat-semibold;
+          }
+        }
+      }
+      hr{
+        background-color: $Rose50;
+      }
+    }
+    &__totalorder {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      .statement--order {
+        font-size: 1.4rem;
+        color: $Rose900;
+        font-family: Redhat-semibold;
+        @include mobile{
+       font-size: 1rem;
+        }
+      }
+      .total--price {
+        font-size: 1.2rem;
+        color: $Rose900;
+        font-family: Redhat-bold;
+      }
+    }
+  }
+  &__start {
+    width: 100%;
+    padding: 1em;
+    border-radius: 30px;
+    border: 0;
+    background-color: $Red;
+    color: white;
+    font-family: Redhat-regular;
+    font-size: 1.2em;
+  }
+}

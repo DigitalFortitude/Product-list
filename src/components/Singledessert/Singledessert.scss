@@ -1,0 +1,44 @@
+@use "../../styles/mixins.scss" as *;
+@use "../../styles/font.scss" as *;
+@use "../../styles/variables.scss" as *;
+.singledessert {
+  width: 100%;
+
+  &__section {
+    position: relative;
+    width: 100%;
+    margin-bottom: 3rem;
+    &__image {
+      img {
+        width: 100%;
+
+        border-radius: 20px;
+      }
+    }
+    .image-clicked {
+      border: 2px solid $Red;
+      border-radius: 20px;
+    }
+  }
+  &__category {
+    color: $Rose400;
+    font-family: Redhat-regular;
+    @include mobile {
+      font-size: clamp(1rem, 1vw + 1rem, 1.4rem);
+    }
+  }
+  &__name {
+    color: $Rose900;
+    font-family: Redhat-bold;
+    @include mobile {
+      font-size: clamp(1rem, 1vw + 1rem, 1.5rem);
+    }
+  }
+  &__price {
+    color: $Red;
+    font-family: Redhat-semibold;
+    @include mobile {
+      font-size: clamp(1rem, 1vw + 1rem, 1.5rem);
+    }
+  }
+}
